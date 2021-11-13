@@ -1,8 +1,10 @@
 {
-    "reporter": "junit",
+    "reporter": "mochawesome",
     "reporterOptions": {
-      "mochaFile": "TestReports/my-test-output.xml",
-      "toConsole": false
+      "reportDir": "TestReports",
+      "overwrite": false,
+      "html": false,
+      "json": true
     },
     "video": false,
     "screenshotsFolder": "TestReports/screenshots"

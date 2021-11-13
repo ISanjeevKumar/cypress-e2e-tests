@@ -4,8 +4,8 @@
   "description": "Cypress e2e tests with best practices",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT=prod TEST=smoke npx cypress open",
-    "cy:local:run": "ENVIRONMENT=local TEST=smoke npx cypress run -b chrome --headless"
+    "test": "ENVIRONMENT=prod TEST=smoke node cypress/scripts/cypress.js",
+    "cy:local:run": "ENVIRONMENT=local TEST=smoke node cypress/scripts/cypress.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,12 @@
   "dependencies": {
     "cypress": "9.0.0",
     "faker": "^5.5.3",
+    "fs-extra": "^10.0.0",
     "mocha-junit-reporter": "^2.0.2"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.0.1"
   }
 }
