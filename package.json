@@ -4,7 +4,7 @@
   "description": "Cypress e2e tests with best practices",
   "main": "index.js",
   "scripts": {
-    "test": "npm run cypress"
+    "test": "ENVIRONMENT=prod TEST=smoke npx cypress open"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ISanjeevKumar/cypress-parallel-tests/issues"
   },
-  "homepage": "https://github.com/ISanjeevKumar/cypress-parallel-tests#readme"
+  "homepage": "https://github.com/ISanjeevKumar/cypress-parallel-tests#readme",
+  "dependencies": {
+    "cypress": "9.0.0"
+  }
 }
