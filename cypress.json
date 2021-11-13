@@ -1,3 +1,9 @@
 {
-    "video": false
+    "reporter": "junit",
+    "reporterOptions": {
+      "mochaFile": "TestReports/my-test-output.xml",
+      "toConsole": false
+    },
+    "video": false,
+    "screenshotsFolder": "TestReports/screenshots"
 }

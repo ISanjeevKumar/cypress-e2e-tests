@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ENVIRONMENT=prod TEST=smoke npx cypress open",
-    "cy:local:run": "ENVIRONMENT=local TEST=smoke npx cypress open"
+    "cy:local:run": "ENVIRONMENT=local TEST=smoke npx cypress run -b chrome --headless"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ISanjeevKumar/cypress-parallel-tests#readme",
   "dependencies": {
-    "cypress": "9.0.0"
+    "cypress": "9.0.0",
+    "faker": "^5.5.3",
+    "mocha-junit-reporter": "^2.0.2"
   }
 }
