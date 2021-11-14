@@ -4,8 +4,9 @@
   "description": "Cypress e2e tests with best practices",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT=prod TEST=smoke node cypress/scripts/cypress.js",
-    "cy:local:run": "ENVIRONMENT=local TEST=smoke node cypress/scripts/cypress.js"
+    "test": "node cypress/scripts/cypress.js",
+    "cy:local:run": "ENVIRONMENT=local TEST=smoke node cypress/scripts/cypress.js",
+    "cy:local:debug": "ENVIRONMENT=local TEST=smoke npx cypress open"
   },
   "repository": {
     "type": "git",
