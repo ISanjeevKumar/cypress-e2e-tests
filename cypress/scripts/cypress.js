@@ -15,8 +15,8 @@ async function runTests() {
         browser: 'chrome'
     })
     const totalFailed = testRun['totalFailed']
-    //const jsonReport = await merge(options)
-   // await generator.create(jsonReport, options);
+    const jsonReport = await merge(options)
+    await generator.create(jsonReport, options);
     process.exit(totalFailed);
 }
 

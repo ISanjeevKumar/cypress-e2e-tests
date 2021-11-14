@@ -1,9 +1,12 @@
 {
-    "reporter": "junit",
-    "reporterOptions": {
-      "mochaFile": "TestReports/my-test-output-[hash].xml",
-      "toConsole": false
-    },
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  },
     "video": false,
-    "screenshotsFolder": "TestReports/screenshots"
+    "screenshotsFolder": "TestReports/assets",
+    "retries": {
+      "runMode": 1,
+      "openMode": 0
+    }
 }

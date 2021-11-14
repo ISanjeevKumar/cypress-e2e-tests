@@ -18,3 +18,23 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+const addContext = require('mochawesome/addContext')
+
+Cypress.on('test:after:run', (test, runnable) => {
+    console.log('test', test)
+    console.log('runnable', runnable)
+    if (test.state === 'failed') {
+        const attempt = Cypress._.get(cy.state('runnable'), '_currentRetry', 0)
+        const suffixScreenshotFile = attempt >= 0 ? `(failed) (attempt ${attempt + 2}).png` : '(failed).png';
+        const screenshotFileName = `${runnable.parent.title} -- ${test.title} ${suffixScreenshotFile}`
+        console.log('logfile', Cypress.spec.name);
+        addContext({
+            test
+        },
+            {
+                title: 'ScreenShot',
+                value: `assets/${Cypress.spec.name}/${screenshotFileName}`
+            },
+        )
+    }
+})
