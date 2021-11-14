@@ -23,6 +23,6 @@ describe('Verify login functionality', function () {
     it('Verify user should not be able to login with invalid credentials', function () {
         HomePage.navigateToLoginPage()
         LoginPage.login(this.user.username,this.user.password)
-        LoginPage.verifyErrorMessage('Invalid email or password.1')
+        LoginPage.verifyErrorMessage('Invalid email or password.')
     })
 })
