@@ -1,6 +1,6 @@
 /// <reference types="Cypress"/>
 
-import { HomePage, LoginPage } from '../../pageObjects/App'
+import { HomePage, LoginPage } from '../../pageObjects/app'
 
 describe('Verify login functionality', function () {
 

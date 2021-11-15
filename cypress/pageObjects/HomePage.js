@@ -1,4 +1,5 @@
 /// <reference types="Cypress"/>
+const {actions,common} = require('../helpers/cypressHelper')
 
 const locators = {
     DISMISS_COOKIES_BTN: 'a.cc-btn.cc-dismiss',
@@ -14,28 +15,28 @@ function visit(applicationUrl) {
         dismissCooKies()
         closeWelcomeBanner()
     })
-    console.log(`Navigated to ${applicationUrl}`)
+    common.log(`Navigated to ${applicationUrl}`)
 }
 
 function navigateToLoginPage() {
-    cy.get(locators.ACCOUNT_LINK).should('be.visible').click()
-    cy.get(locators.LOGIN_BTN).should('be.visible').click()
+    actions.clickOnElement(locators.ACCOUNT_LINK)
+    actions.clickOnElement(locators.LOGIN_BTN)
 }
 
 function navigateToCustomerFeedbackPage() {
-    cy.get(locators.CUSTOMER_FEEDBACK_LINK).should('be.visible').click()
+    actions.clickOnElement(locators.CUSTOMER_FEEDBACK_LINK)
 }
 
 function dismissCooKies() {
-    cy.get(locators.DISMISS_COOKIES_BTN).should('be.visible').click()
+    actions.clickOnElement(locators.DISMISS_COOKIES_BTN)
 }
 
 function closeWelcomeBanner() {
-    cy.get(locators.WELCOME_BANNER_BTN).should('be.visible').click()
+    actions.clickOnElement(locators.WELCOME_BANNER_BTN)
 }
 
 function openSideMenu() {
-    cy.get(locators.OPEN_SIDENAV_BTN).should('be.visible').and('be.enabled').click()
+    actions.clickOnElement(locators.OPEN_SIDENAV_BTN)
 }
 
 module.exports = {

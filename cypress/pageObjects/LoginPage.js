@@ -1,3 +1,6 @@
+/// <reference types="Cypress"/>
+const {actions,common} = require('../helpers/cypressHelper')
+
 const locators = {
     EMAIL_INPT: '#email',
     PASSWORD_INPT: '#password',
@@ -6,10 +9,11 @@ const locators = {
 }
 
 function login(username, password) {
-    cy.get(locators.EMAIL_INPT).type(username)
-    cy.get(locators.PASSWORD_INPT).type(password)
+    common.log(`Log-in with ${username}`)
+    actions.enterText(locators.EMAIL_INPT,username)
+    actions.enterText(locators.PASSWORD_INPT, password)
     cy.get(locators.LOGIN_BTN).click()
-    console.log(`Logging in with ${username}`)
+  
 }
 
 function verifyErrorMessage(errorMessage) {
