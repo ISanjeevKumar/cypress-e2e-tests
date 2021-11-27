@@ -1,7 +1,7 @@
-import HomePage from './homePage'
-import LoginPage from './loginPage'
+import HomePage from '../pageObjects/homePage'
+import LoginPage from '../pageObjects/loginPage'
 
-module.exports ={
+export {
     HomePage,
     LoginPage
 };

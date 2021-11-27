@@ -2,3 +2,7 @@ node_modules
 .DS_Store
 target/
 TestReports
+.idea/cypress-parallel-tests.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
