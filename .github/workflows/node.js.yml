@@ -35,6 +35,5 @@ jobs:
       with:
         files: TestReports/*.xml
         check_name: Cypress Test Result
-        report_individual_runs: true
         
         
