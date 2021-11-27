@@ -1,5 +1,7 @@
 # cypress-e2e-tests
 
+[![Cypress parallel Tests](https://github.com/ISanjeevKumar/cypress-e2e-tests/actions/workflows/node.js.yml/badge.svg)](https://github.com/ISanjeevKumar/cypress-e2e-tests/actions/workflows/node.js.yml)
+
 
 Cypress e2e tests using page object model design patterns.
 
