@@ -27,7 +27,7 @@ const {
 const getRunConfigs = function (cypressConfig) {
 
   const envBasedRunCypressConfig = getEnvironmnetUrls(ENVIRONMENT);
-  envBasedRunCypressConfig.integrationFolder = `./cypress/integration/${TEST}`;
+  //envBasedRunCypressConfig.integrationFolder = `./cypress/integration/${TEST}`;
 
   envBasedRunCypressConfig.env = Object.assign(cypressConfig.env, envBasedRunCypressConfig.env);
   const config = Object.assign(cypressConfig, envBasedRunCypressConfig);

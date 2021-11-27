@@ -15,6 +15,11 @@ const argv = yargs.options({
         describe: 'choose browser that you wanna run tests on',
         default: 'chrome',
         choices: ['chrome', 'electron', 'firefox', 'edge']
+    },
+    'spec': {
+        alias: 's',
+        describe: 'choose spec folder that you wanna run',
+        default: 'smoke'
     }
 }).help()
     .argv
@@ -22,7 +27,8 @@ const argv = yargs.options({
 async function runTests() {
     await fse.remove('TestReports');
     const testRun = await cypress.run({
-        browser: argv.browser
+        browser: argv.browser,
+        spec: `cypress/integration/${argv.spec}/**`
     })
     const totalFailed = testRun['totalFailed']
     const jsonReport = await merge(options)
