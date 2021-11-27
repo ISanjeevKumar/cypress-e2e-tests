@@ -1,8 +1,8 @@
 {
-    "reporterEnabled": "mochawesome, mocha-junit-reporter, spec",
+    "reporterEnabled": "mochawesome, mocha-junit-reporter",
     "mochaJunitReporterReporterOptions": {
       "mochaFile": "TestReports/my-test-results-[hash].xml",
-      "toConsole": true,
+      "toConsole": false,
       "attachments": true
     },
     "mochawesomeReporterOptions": {
