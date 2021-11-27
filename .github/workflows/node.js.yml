@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v2
     - name: Install && Verify Cypress
       run: |
-        npm ci && npx cypress verify
+        npm install && npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
         npm run test
