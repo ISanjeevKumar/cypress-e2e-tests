@@ -3,10 +3,12 @@
   "reporterOptions": {
     "configFile": "reporter-config.json"
   },
-    "video": false,
-    "screenshotsFolder": "TestReports/assets",
-    "retries": {
-      "runMode": 1,
-      "openMode": 0
-    }
+  "modifyObstructiveCode": true,
+  "experimentalSourceRewriting": true,
+  "video": false,
+  "screenshotsFolder": "TestReports/assets",
+  "retries": {
+    "runMode": 1,
+    "openMode": 0
+  }
 }
