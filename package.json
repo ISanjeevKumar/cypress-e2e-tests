@@ -6,8 +6,8 @@
   "scripts": {
     "test": "node cypress/scripts/cypress.js  --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
     "cy:run:parallel":"run-p smoke:feedbackTests smoke:loginTests --print-label",
-    "smoke:feedbackTests": "node cypress/scripts/cypress.js -b chrome -s smoke/feedback --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
-    "smoke:loginTests": "node cypress/scripts/cypress.js -b chrome  -s smoke/login  --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "smoke:feedbackTests": "node cypress/scripts/cypress.js -s smoke/feedback --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "smoke:loginTests": "node cypress/scripts/cypress.js -s smoke/login  --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
     "cy:local:run": "ENVIRONMENT=local node cypress/scripts/cypress.js -b chrome",
     "cy:local:debug": "ENVIRONMENT=local TEST=smoke npx cypress open"
   },
