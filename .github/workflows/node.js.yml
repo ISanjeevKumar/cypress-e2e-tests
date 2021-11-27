@@ -33,4 +33,5 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: TestReports/*.xml    
+        files: TestReports/*.xml
+        check_name: Cypress Test Result
