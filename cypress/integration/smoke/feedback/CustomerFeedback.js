@@ -1,4 +1,4 @@
-import { HomePage } from '../../../pageObjects/App'
+import { HomePage } from '../../../pageObjects/app'
 
 describe('Customer feedbacks', function () {
 

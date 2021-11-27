@@ -1,7 +1,7 @@
 import HomePage from './homePage'
 import LoginPage from './loginPage'
 
-export {
+module.exports ={
     HomePage,
     LoginPage
-}
+};
