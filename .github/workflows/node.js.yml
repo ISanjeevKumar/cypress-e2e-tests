@@ -12,7 +12,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -29,7 +28,8 @@ jobs:
       with:
         name: Execution Report
         path: ${{ github.workspace }}/TestReports
-    - name: Publish Cypress Test Results
+        
+    - name: Publish Cypress Test Results    
     - uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
