@@ -28,6 +28,7 @@ async function runTests() {
     await fse.remove('TestReports');
     const testRun = await cypress.run({
         browser: argv.browser,
+        headless: true,
         spec: `cypress/integration/${argv.spec}/**`
     })
     const totalFailed = testRun['totalFailed']
