@@ -15,12 +15,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Download the build folders
-      uses: actions/download-artifact@v2
       with:
           name: build
-          path: build   
+          path: build 
           
     - name: Cypress run
       uses: cypress-io/github-action@v2
