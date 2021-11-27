@@ -9,21 +9,15 @@ on:
 jobs:
  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
     - name: Install && Verify Cypress
       run: |
         npm ci && npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
-        npm run cy:run:parallel
+        npm run test
 
 
 
