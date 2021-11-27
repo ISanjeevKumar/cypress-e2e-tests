@@ -16,9 +16,11 @@ Also, integrated multi-reporter to publish HTML and junit report.
    - MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 pass listeners added to [Runner]
   ```
     it has been fixed in Cypress 7.0.0
-    
   ```  
 
-
+   - Invalid: lock file's cypress@6.1.0 does not satisfy cypress@9.0.0
+  ```
+   After changing the version of cypress manually , do npm install to sync the package.json and packagae.lock.json file.
+  ```  
 
 
