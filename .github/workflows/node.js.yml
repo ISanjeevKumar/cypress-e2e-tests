@@ -1,24 +1,37 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Cypress parallel Tests
 
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ master ] 
+    
 jobs:
- test:
+  test:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install && Verify Cypress
+
+    - name: Download the build folders
+      uses: actions/download-artifact@v2
+      with:
+          name: build
+          path: build   
+          
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
+          # Specify Browser since container image is compile with Firefox
+          browser: chrome
+          build: yarn build
+
+    - name: Verify Cypress
       run: |
-        npm install && npx cypress verify
+           npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
         npm run test
-
-
-
-
