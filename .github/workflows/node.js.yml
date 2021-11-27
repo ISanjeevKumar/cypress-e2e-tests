@@ -30,7 +30,7 @@ jobs:
         path: ${{ github.workspace }}/TestReports
         
     - name: Publish Cypress Test Results    
-    - uses: EnricoMi/publish-unit-test-result-action@v1
+      uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
         files: TestReports/*.xml    
