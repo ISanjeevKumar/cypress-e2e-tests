@@ -23,3 +23,8 @@ jobs:
     - name: Execute Cypress e2e tests 
       run: |
         npm run cy:run:parallel
+        
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Execution Report
+        path: ${{ github.workspace }}/TestReports  
