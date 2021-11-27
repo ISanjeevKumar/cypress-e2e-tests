@@ -23,7 +23,7 @@ jobs:
         npm ci && npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
-        npm run cy:run:parallel
+        npm run test
 
 
 
