@@ -25,6 +25,12 @@ jobs:
         npm run cy:run:parallel
         
     - uses: actions/upload-artifact@v2
+      if: failure()
       with:
         name: Execution Report
-        path: ${{ github.workspace }}/TestReports  
+        path: ${{ github.workspace }}/TestReports
+    - name: Publish Cypress Test Results
+    - uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: TestReports/*.xml    
