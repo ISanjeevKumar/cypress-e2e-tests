@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm cy:run:parallel
+    - run: npm ci && npx cypress verify
+    - run: npm run cy:run:parallel
