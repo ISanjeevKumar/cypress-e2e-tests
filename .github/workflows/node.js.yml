@@ -15,20 +15,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-          name: build
-          path: build 
-          
-    - name: Cypress run
-      uses: cypress-io/github-action@v2
-      with:
-          # Specify Browser since container image is compile with Firefox
-          browser: chrome
-          build: yarn build
 
-    - name: Verify Cypress
+    - name: Install npm packages and verify Cypress
       run: |
-           npx cypress verify
+           npm ci && npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
         npm run test
