@@ -1,5 +1,5 @@
-import HomePage from './homePage'
-import LoginPage from './loginPage'
+import HomePage from '../pageObjects/homePage'
+import LoginPage from '../pageObjects/loginPage'
 
 export {
     HomePage,
