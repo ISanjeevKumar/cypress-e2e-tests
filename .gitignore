@@ -6,3 +6,6 @@ TestReports
 .idea/misc.xml
 .idea/modules.xml
 .idea/vcs.xml
+multi-reporter-config.json
+cypress/parallel-weights.json
+runner-results/
