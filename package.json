@@ -4,10 +4,8 @@
   "description": "Cypress e2e tests with best practices",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT=prod node cypress/scripts/cypress.js --s smoke --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
-    "cy:run:parallel": "run-p smoke:feedbackTests smoke:loginTests --print-label",
-    "smoke:feedbackTests": "node cypress/scripts/cypress.js -s smoke/feedback --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
-    "smoke:loginTests": "node cypress/scripts/cypress.js -s smoke/login  --reporter cypress-multi-reporters --reporter-options configFile=reporter-config.json",
+    "test": "ENVIRONMENT=prod node cypress/scripts/cypress.js",
+    "cy:run:parallel": "node_modules/.bin/cypress-parallel -s test -t 2 -d cypress/integration/smoke -r spec",
     "cy:local:run": "ENVIRONMENT=local node cypress/scripts/cypress.js -b chrome",
     "cy:local:debug": "ENVIRONMENT=local TEST=smoke npx cypress open"
   },
@@ -25,7 +23,8 @@
   },
   "homepage": "https://github.com/ISanjeevKumar/cypress-parallel-tests#readme",
   "dependencies": {
-    "cypress": "9.1.0",
+    "cypress": "^8.7.0",
+    "cypress-parallel": "^0.7.0",
     "faker": "^5.5.3",
     "fs-extra": "^10.0.0",
     "mocha": "^9.1.3",

@@ -23,9 +23,9 @@ const addContext = require('mochawesome/addContext')
 Cypress.on('test:after:run', (test, runnable) => {
     console.log('test', test)
     console.log('runnable', runnable)
-    if (test.state === 'failed') {
+      if (test.currentRetry === test.retries) {
         const attempt = Cypress._.get(cy.state('runnable'), '_currentRetry', 0)
-        const suffixScreenshotFile = attempt >= 0 ? `(failed) (attempt ${attempt + 2}).png` : '(failed).png';
+        const suffixScreenshotFile = attempt >= 0 ? `(failed) (attempt ${attempt + 1}).png` : '(failed).png';
         const screenshotFileName = `${runnable.parent.title} -- ${test.title} ${suffixScreenshotFile}`
         console.log('logfile', Cypress.spec.name);
         addContext({
