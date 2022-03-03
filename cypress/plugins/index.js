@@ -13,7 +13,6 @@
 // the project's config changing)
 
 const getEnvironmnetUrls = require("../config/runConfig")
-const faker = require("faker")
 
 /**
  * @type {Cypress.PluginConfig}
@@ -39,14 +38,5 @@ const getRunConfigs = function (cypressConfig) {
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  on('task', {
-    generateUserData() {
-      user = {
-        username: faker.internet.email(),
-        password: faker.internet.password()
-      }
-      return user
-    }
-  })
   return getRunConfigs(config);
 }

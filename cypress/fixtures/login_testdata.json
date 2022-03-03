@@ -1,3 +1,5 @@
 {
-    "invalidUserErrorMessage": "Invalid email or password."
+    "invalidUserErrorMessage": "Epic sadface: Username and password do not match any user in this service",
+    "standardUser":"standard_user",
+    "password": "secret_sauce"
 }

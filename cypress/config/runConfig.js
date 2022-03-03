@@ -2,13 +2,13 @@ const getEnvironmnetUrls = function (environment) {
     if (environment == 'local') {
         return {
             env: {
-                baseUrl: 'http://localhost:3000'
+                baseUrl: 'https://www.saucedemo.com/'
             }
         }
     } else {
         return {
             env: {
-                baseUrl: 'https://juice-shop.herokuapp.com/'
+                baseUrl: 'https://www.saucedemo.com/'
             }
         }
     }

@@ -1,7 +1,7 @@
 /// <reference types="Cypress"/>
-import { HomePage, LoginPage } from '../../../pages/app'
+import { HomePage, LoginPage } from '../../pages/app'
 
-describe('Verify login functionality', function () {
+describe('admin.spec.js', function () {
 
     beforeEach('Navigate to application', function () {
         HomePage.visit(Cypress.env('baseUrl'))

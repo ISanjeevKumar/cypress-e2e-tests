@@ -4,6 +4,7 @@
     "configFile": "reporter-config.json"
   },
   "video": false,
+  "chromeWebSecurity": false,
   "screenshotsFolder": "TestReports/assets",
   "retries": {
     "runMode": 1,
