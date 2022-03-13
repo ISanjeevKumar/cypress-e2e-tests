@@ -8,8 +8,15 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ] 
-    
+
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        test-type: ["regression","smoke"]
   test:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +28,7 @@ jobs:
            npm ci && npx cypress verify
     - name: Execute Cypress e2e tests 
       run: |
-        npm run test
+        ENVIRONMENT=prod TEST_GROUP=${{ matrix['test-type'] }} npm run test
         
     - uses: actions/upload-artifact@v2
       if: failure()
