@@ -11,14 +11,12 @@ on:
 
 
 jobs:
-  build:
+   
+  test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         test-type: ["regression","smoke"]
-  test:
-    runs-on: ubuntu-latest
     steps:
     - name: Checkout
       uses: actions/checkout@v2
