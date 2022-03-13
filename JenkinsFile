@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    tools { nodejs 'Nodejs' }
+    parameters {
+        string(name:'SPEC', defaultValue:'**/*.feature', description:'choose feature files that you want to run')
+        choice(name:'BROWSER', choices: ['chrome', 'electron', 'firefox'], description:'choose the browser')
+    }
+
+    stages {
+        stage('Install depedency') {
+            steps {
+                sh 'npm i'
+                sh 'npx cypress verify'
+            }
+        }
+        stage('Run Tests') {
+            parallel {
+                stage('Smoke') {
+                    steps {
+                        sh 'ENVIRONMENT=prod TEST_GROUP=smoke npm run test'
+                    }
+                }
+                stage('Regression') {
+                    steps {
+                        sh 'ENVIRONMENT=prod TEST_GROUP=regression npm run test'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            deleteDir()
+        }
+    }
+}

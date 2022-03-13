@@ -7,8 +7,22 @@ Cypress e2e tests using page object model design patterns.
 
 Also, integrated multi-reporter to publish HTML and junit report.
 
+## Framework Supports
+* Multiple browser automation
+* Jenkins Integration
+* Failed Screenshots
+* Testdata driven tests
+* Retries of failed tests
+* Parallel Execution on same machine
+* Mocha Reports Enabled
 
-# Challenges Faced:
+## How to run Cypress tests
+
+```
+npm run test
+```
+
+## Challenges Faced:
 
   - Error: Webpack Compilation Error
 

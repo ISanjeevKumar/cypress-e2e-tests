@@ -20,13 +20,13 @@ const getEnvironmnetUrls = require("../config/runConfig")
 
 const {
   ENVIRONMENT,
-  TEST
+  TEST_GROUP
 } = process.env
 
 const getRunConfigs = function (cypressConfig) {
 
   const envBasedRunCypressConfig = getEnvironmnetUrls(ENVIRONMENT);
-  //envBasedRunCypressConfig.integrationFolder = `./cypress/integration/${TEST}`;
+  envBasedRunCypressConfig.integrationFolder = `./cypress/integration/${TEST_GROUP}`;
 
   envBasedRunCypressConfig.env = Object.assign(cypressConfig.env, envBasedRunCypressConfig.env);
   const config = Object.assign(cypressConfig, envBasedRunCypressConfig);
