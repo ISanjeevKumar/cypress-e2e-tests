@@ -1,13 +1,9 @@
 /// <reference types="Cypress"/>
-const {actions,common} = require('../helpers/cypressHelper')
-
-const locators = {
-
-}
+const {actions} = require('../support/actions')
 
 function visit(applicationUrl) {
     cy.visit(applicationUrl);
-    common.log(`Navigated to ${applicationUrl}`)
+    actions.log(`Navigated to ${applicationUrl}`)
 }
 
 function isUserLoggedIn(){
