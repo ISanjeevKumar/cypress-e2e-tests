@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node cypress/scripts/cypress.js",
     "cy:local:run": "ENVIRONMENT=prod TEST_GROUP=smoke node cypress/scripts/cypress.js -b chrome",
-    "cy:local:debug": "ENVIRONMENT=local TEST=smoke npx cypress open"
+    "cy:local:debug": "ENVIRONMENT=local TEST_GROUP=smoke npx cypress open"
   },
   "repository": {
     "type": "git",

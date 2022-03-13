@@ -1,5 +1,5 @@
 /// <reference types="Cypress"/>
-const { actions, common } = require('../helpers/cypressHelper')
+const {actions} = require('../support/actions')
 
 const locators = {
     EMAIL_INPT: '#user-name',
@@ -9,15 +9,15 @@ const locators = {
 }
 
 function login(username, password) {
-    common.log(`Log-in with ${username}`)
+    actions.log(`Log-in with ${username}`)
     actions.enterText(locators.EMAIL_INPT, username)
     actions.enterText(locators.PASSWORD_INPT, password)
-    cy.get(locators.LOGIN_BTN).click()
+    actions.getWebElement(locators.LOGIN_BTN).click()
 
 }
 
 function verifyErrorMessage(errorMessage) {
-    cy.get(locators.ERROR_TOAST).should('not.be.empty')
+    actions.getWebElement(locators.ERROR_TOAST).should('not.be.empty')
         .and('contain.text', errorMessage)
 }
 

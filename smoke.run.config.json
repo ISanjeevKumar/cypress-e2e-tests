@@ -1,0 +1,12 @@
+{
+    "regression": [
+        {
+            "group1": "admin",
+            "testFiles": ["**/regression/admin.spec.js"]
+        },
+        {
+            "group2":"login",
+            "testFiles": ["**/regression/login.spec.js"]
+        }
+    ]
+}

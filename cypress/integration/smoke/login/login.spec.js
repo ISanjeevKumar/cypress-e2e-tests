@@ -12,7 +12,7 @@ describe('Verify login functionality', function () {
     })
 
     it('Verify user should not be able to login with invalid credentials', function () {
-        LoginPage.login('this.user.username', 'this.user.password');
+        LoginPage.login(this.data.invalidUser, this.data.password);
         LoginPage.verifyErrorMessage(this.data.invalidUserErrorMessage);
     })
 
