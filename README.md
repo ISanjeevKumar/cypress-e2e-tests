@@ -21,6 +21,55 @@ Also, integrated multi-reporter to publish HTML and junit report.
 ```
 npm run test
 ```
+## Page object model design aproach with page modules pattern 
+
+- Example
+  Page Module -
+ ``` 
+  /// <reference types="Cypress"/>
+const {actions} = require('../support/actions')
+
+function visit(applicationUrl) {
+    cy.visit(applicationUrl);
+    actions.log(`Navigated to ${applicationUrl}`)
+}
+
+function isUserLoggedIn(){
+    cy.url().should('contain', 'https://www.saucedemo.com/inventory.html')
+}
+
+module.exports = {
+    visit,
+    isUserLoggedIn
+}
+```
+Test layer-
+ ```
+ /// <reference types="Cypress"/>
+import { HomePage, LoginPage } from '../../pages/app'
+
+describe('Verify login functionality', function () {
+
+    beforeEach('Navigate to application', function () {
+        HomePage.visit(Cypress.env('baseUrl'))
+
+        cy.fixture('login_testdata.json').then((data) => {
+            this.data = data;
+        })
+    })
+
+    it('Verify user should not be able to login with invalid credentials', function () {
+        LoginPage.login('this.user.username', 'this.user.password');
+        LoginPage.verifyErrorMessage(this.data.invalidUserErrorMessage);
+    })
+
+    it('Verify user should be able to login with valid credentials', function () {
+        LoginPage.login(this.data.standardUser, this.data.password);
+        HomePage.isUserLoggedIn();
+    })
+})
+
+ ```
 
 ## Challenges Faced:
 
