@@ -23,8 +23,11 @@ npm run test
 ```
 ## Page object model design aproach with page modules pattern 
 
+In this each page module exports public functions instead of creating page object and then access the function with the help of page objects like Page pageObjects = new Page();
+
 - Example
-  Page Module -
+  
+ Page Module -
  ``` 
   /// <reference types="Cypress"/>
 const {actions} = require('../support/actions')
