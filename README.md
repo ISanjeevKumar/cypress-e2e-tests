@@ -21,7 +21,7 @@ Also, integrated multi-reporter to publish HTML and junit report.
 ```
 npm run test
 ```
-## Page object model design aproach with page modules pattern 
+## Page modules design pattern 
 
 In this each page module exports public functions instead of creating page object and then access the function with the help of page objects like Page pageObjects = new Page();
 
